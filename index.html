@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Prediction Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 100px;
+        }
+        #prediction {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iris Prediction Model</h1>
+    
+    <form action="/predict" method="post">
+        <label for="SepalLengthCm">Sepal Length (cm):</label>
+        <input type="number" step="0.1" name="SepalLengthCm" required><br><br>
+        
+        <label for="SepalWidthCm">Sepal Width (cm):</label>
+        <input type="number" step="0.1" name="SepalWidthCm" required><br><br>
+        
+        <label for="PetalLengthCm">Petal Length (cm):</label>
+        <input type="number" step="0.1" name="PetalLengthCm" required><br><br>
+        
+        <label for="PetalWidthCm">Petal Width (cm):</label>
+        <input type="number" step="0.1" name="PetalWidthCm" required><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    <h2>Prediction: <span id="prediction">{{ prediction }}</span></h2>
+
+    <h2>Visualization</h2>
+    <img src="/static/scatter_plot.png" alt="Iris Species Scatter Plot">
+</body>
+</html>
